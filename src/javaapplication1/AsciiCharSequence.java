@@ -7,7 +7,7 @@ package javaapplication1;
 
 /**
  *
- * @author _
+ * @author Alexander Shukan
  */
 public class AsciiCharSequence implements CharSequence {
 
@@ -24,28 +24,38 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public int length() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.value.length;
     }
 
     @Override
     public char charAt(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (char) this.value[i];
     }
 
     @Override
-    public CharSequence subSequence(int i, int i1) {
-        //return this.substring(i, i1);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public CharSequence subSequence(int a, int b) {
+//        StringBuilder s = new StringBuilder("");
+//        for (int i = a; i < b; i++) {
+//            s.append((char) this.value[i]);
+//        }
+//        return s.toString();
+        byte[] s = new byte[b - a];
+        for (int i = 0; i < b - a; i++) {
+            s[i] = this.value[i + a];
+        }
+
+//        System.arraycopy(this.value, 0, s, a, b);
+        AsciiCharSequence ss = new AsciiCharSequence(s);
+        return (CharSequence) ss;
     }
 
     @Override
     public String toString() {
-        String s = "";
+        StringBuilder s = new StringBuilder("");
         for (int i = 0; i < this.value.length; i++) {
-            s += this.value[i];
+            s.append((char) this.value[i]);
         }
-        return s;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return s.toString();
     }
 
 }

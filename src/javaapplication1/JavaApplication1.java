@@ -19,12 +19,15 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        byte[] bb = {'a', 'b', 'c'};
+        byte[] bb = {'a', 'b', 'c', 'r', 'w', 'y'};
         AsciiCharSequence acs;
         acs = new AsciiCharSequence(bb);
         System.out.println("bb = " + Arrays.toString(bb));
                 
         System.out.println("Result = " + acs.toString());
+        System.out.println("Sub = " + acs.subSequence(2, 5).toString());
+        System.out.println("Length = " + acs.length());
+        System.out.println("Third char = " + acs.charAt(3));
 
         ComplexNumber a = new ComplexNumber((double) 2, (double) 5);
         ComplexNumber b = new ComplexNumber((double) 2.0000000000000002, (double) 5);
