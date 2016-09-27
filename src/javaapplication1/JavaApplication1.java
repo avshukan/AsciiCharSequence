@@ -5,8 +5,6 @@
  */
 package javaapplication1;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
-import java.awt.Robot;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.function.*;
