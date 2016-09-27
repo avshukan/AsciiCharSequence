@@ -11,6 +11,17 @@ package javaapplication1;
  */
 public class AsciiCharSequence implements CharSequence {
 
+    private final byte[] value;
+
+    public AsciiCharSequence() {
+        this.value = null;
+    }
+
+    public AsciiCharSequence(byte[] s) {
+        this.value = new byte[s.length];
+        System.arraycopy(s, 0, this.value, 0, s.length);
+    }
+
     @Override
     public int length() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -29,7 +40,12 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String s = "";
+        for (int i = 0; i < this.value.length; i++) {
+            s += this.value[i];
+        }
+        return s;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

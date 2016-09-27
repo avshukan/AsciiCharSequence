@@ -21,21 +21,16 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        byte[] bb = {'a', 'b', 'c'};
+        AsciiCharSequence acs;
+        acs = new AsciiCharSequence(bb);
+        System.out.println("bb = " + Arrays.toString(bb));
+                
+        System.out.println("Result = " + acs.toString());
+
         ComplexNumber a = new ComplexNumber((double) 2, (double) 5);
         ComplexNumber b = new ComplexNumber((double) 2.0000000000000002, (double) 5);
-        DoubleUnaryOperator o;
-        //o = new DoubleUnaryOperator();
-        System.out.println(a.equals(b));
-        double xx = 1.0 / 0.0;
-        double yy = -1.0 / 0.0;
-        double zz = xx+yy;
-        int i = 0b01111111111111111111111111111111;
-        int ii = (int) 3_000_000_001L;
-        System.out.println(xx);
-        System.out.println(yy);
-        System.out.println(zz);
-        System.out.println(i);
-        System.out.println(ii);
+
         System.out.println(
                 integrate(x -> 1, 0, 10));
 
@@ -64,7 +59,5 @@ public class JavaApplication1 {
         }
         return area;
     }
-    
-    
 
 }
